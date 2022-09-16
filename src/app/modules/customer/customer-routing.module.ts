@@ -9,6 +9,7 @@ import {GetAllCustomerComponent} from "./components/get-all-customer/get-all-cus
 
 const routes: Routes = [
   { path: '', component: CustomerComponent, children:[
+      {path: '', redirectTo: '/customer/save'},
       {path: 'save', component: SaveCustomerComponent},
       {path: 'update', component: UpdateCustomerComponent},
       {path: 'delete', component: DeleteCustomerComponent},
