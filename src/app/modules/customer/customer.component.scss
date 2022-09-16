@@ -1,0 +1,17 @@
+.main{
+  padding: 50px 10px;
+  h1{
+    color: #FF6A3D;
+  }
+}
+
+.activated-route{
+  background-color: #1A2238;
+  color: white;
+}
+.activated-route:hover{
+  color: #bdc3c7;
+}
+.mat-tab-nav-bar, .mat-tab-link{
+  opacity: 1;
+}

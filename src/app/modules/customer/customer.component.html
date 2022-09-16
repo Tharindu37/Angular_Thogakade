@@ -1,1 +1,22 @@
-<p>customer works!</p>
+<div class="main">
+  <h1>Customer management</h1>
+  <hr>
+
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let tabItem of tabs" [routerLink]="'/customer/'+tabItem.route" routerLinkActive="activated-route">
+      <mat-icon class="mr-8">{{tabItem.icon}}</mat-icon>
+       &nbsp;{{tabItem.label}}
+    </a>
+  </nav>
+
+  <router-outlet></router-outlet>
+
+<!--  <mat-tab-group>-->
+<!--    <mat-tab label="Save"> <app-save-customer></app-save-customer> </mat-tab>-->
+<!--    <mat-tab label="Update"> <app-update-customer></app-update-customer> </mat-tab>-->
+<!--    <mat-tab label="Delete"> <app-delete-customer></app-delete-customer> </mat-tab>-->
+<!--    <mat-tab label="Search"> <app-get-customer></app-get-customer> </mat-tab>-->
+<!--    <mat-tab label="Load"> <app-get-all-customer></app-get-all-customer> </mat-tab>-->
+<!--  </mat-tab-group>-->
+
+</div>
