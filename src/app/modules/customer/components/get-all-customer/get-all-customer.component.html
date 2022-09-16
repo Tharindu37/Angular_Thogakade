@@ -1,1 +1,30 @@
-<p>get-all-customer works!</p>
+<div class="main">
+  <div class="container-fluid">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Customer Id</th>
+        <th>Customer Name</th>
+        <th>Customer Address</th>
+        <th>Customer Salary</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>C001</td>
+        <td>Nimal</td>
+        <td>Colombo</td>
+        <td>25000$</td>
+      </tr>
+      </tbody>
+    </table>
+    <mat-paginator [length]="100"
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 25, 100]"
+                   aria-label="Select page">
+    </mat-paginator>
+
+  </div>
+</div>
