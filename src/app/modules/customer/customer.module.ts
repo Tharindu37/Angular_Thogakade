@@ -10,6 +10,9 @@ import { GetAllCustomerComponent } from './components/get-all-customer/get-all-c
 import { UpdateCustomerComponent } from './components/update-customer/update-customer.component';
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatIconModule} from "@angular/material/icon";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -21,11 +24,14 @@ import {MatIconModule} from "@angular/material/icon";
     GetAllCustomerComponent,
     UpdateCustomerComponent
   ],
-    imports: [
-        CommonModule,
-        CustomerRoutingModule,
-        MatTabsModule,
-        MatIconModule
-    ]
+  imports: [
+    CommonModule,
+    CustomerRoutingModule,
+    MatTabsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
+  ]
 })
 export class CustomerModule { }
