@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-save-customer',
@@ -11,7 +12,7 @@ export class SaveCustomerComponent implements OnInit {
 
   loading = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   form = new FormGroup({
     id: new FormControl(null, Validators.required),
@@ -29,12 +30,19 @@ export class SaveCustomerComponent implements OnInit {
       address: this.form.get('address')?.value.toString(),
       salary: this.form.get('salary')?.value
     }).subscribe(result=>{
-      console.log(result);
+      this.onSuccess("Saved success");
       this.loading = false;
     }, error=>{
-      console.log(error);
+      this.onError('Try again');
       this.loading = false;
     })
+  }
+
+  onSuccess(title: string) {
+    this.toastr.success(title, 'Success!');
+  }
+  onError(title: string){
+    this.toastr.error(title, 'Error!');
   }
 
   ngOnInit(): void {
