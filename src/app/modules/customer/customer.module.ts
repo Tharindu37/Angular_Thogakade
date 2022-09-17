@@ -15,7 +15,6 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 
@@ -38,7 +37,6 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     MatButtonModule,
     MatPaginatorModule,
     ReactiveFormsModule,
-    HttpClientModule,
     MatProgressBarModule
   ]
 })

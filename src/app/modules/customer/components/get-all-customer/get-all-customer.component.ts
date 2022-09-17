@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ToastrService} from "ngx-toastr";
 import {Customer} from "../../dto/Customer";
+import {CustomerService} from "../../services/customer.service";
 
 @Component({
   selector: 'app-get-all-customer',
@@ -10,7 +11,7 @@ import {Customer} from "../../dto/Customer";
 })
 export class GetAllCustomerComponent implements OnInit {
   loading: boolean = false;
-  constructor(private http: HttpClient, private toastr: ToastrService) { }
+  constructor(private customerService : CustomerService,private http: HttpClient, private toastr: ToastrService) { }
 
   dataSet: Customer[] = [];
 
@@ -20,8 +21,7 @@ export class GetAllCustomerComponent implements OnInit {
 
   getAllCustomer() {
     this.loading = true;
-    this.http.get<Customer>('http://localhost:3000/api/v1/customer/getAll'
-    ).subscribe(result => {
+    this.customerService.getAllCustomer().subscribe(result => {
       // @ts-ignore
       this.dataSet = result;
       this.loading = false;
