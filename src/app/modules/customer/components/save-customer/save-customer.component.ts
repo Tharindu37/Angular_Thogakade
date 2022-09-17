@@ -20,6 +20,7 @@ export class SaveCustomerComponent implements OnInit {
 
   submitForm(){
     //save
+    console.log("done")
   }
 
   ngOnInit(): void {
