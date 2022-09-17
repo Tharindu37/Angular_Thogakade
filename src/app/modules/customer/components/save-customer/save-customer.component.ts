@@ -9,6 +9,8 @@ import {HttpClient} from "@angular/common/http";
 })
 export class SaveCustomerComponent implements OnInit {
 
+  loading = false;
+
   constructor(private http: HttpClient) { }
 
   form = new FormGroup({
@@ -20,6 +22,7 @@ export class SaveCustomerComponent implements OnInit {
   });
 
   submitForm(){
+    this.loading = true;
     this.http.post("http://127.0.0.1:3000/api/v1/customer/save",{
       id: this.form.get('id')?.value.toString(),
       name: this.form.get('name')?.value.toString(),
@@ -27,6 +30,10 @@ export class SaveCustomerComponent implements OnInit {
       salary: this.form.get('salary')?.value
     }).subscribe(result=>{
       console.log(result);
+      this.loading = false;
+    }, error=>{
+      console.log(error);
+      this.loading = false;
     })
   }
 
