@@ -2,13 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ToastrService} from "ngx-toastr";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Customer} from "../../dto/Customer";
 
-interface Customer{
-  id: number;
-  name: string;
-  address: string;
-  salary: number;
-}
 
 @Component({
   selector: 'app-delete-customer',
